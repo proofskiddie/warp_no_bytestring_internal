@@ -15,7 +15,7 @@ Network/Wai/Handler/Warp/Buffer.hs :
 3. bufferIO :: Buffer -> Int -> (ByteString -> IO ()) -> IO ()
 
 *4. withForeignBuffer :: ByteString -> ((Buffer, BufSize) -> IO Int) -> IO Int
- left with dependence to Data.ByteString.Internal
+   (left with dependence to Data.ByteString.Internal)
 
 Network/Wai/Handler/Warp/PackInt.hs :
 -------------------------------------
