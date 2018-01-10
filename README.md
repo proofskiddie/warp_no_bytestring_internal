@@ -10,32 +10,32 @@ Changes :
 Network/Wai/Handler/Warp/Buffer.hs :
 -------------------------------------
 
-copy :: Buffer -> ByteString -> IO Buffer
-mallocBS :: Int -> IO ByteString
-bufferIO :: Buffer -> Int -> (ByteString -> IO ()) -> IO ()
+1. copy :: Buffer -> ByteString -> IO Buffer
+2. mallocBS :: Int -> IO ByteString
+3. bufferIO :: Buffer -> Int -> (ByteString -> IO ()) -> IO ()
 
-*withForeignBuffer :: ByteString -> ((Buffer, BufSize) -> IO Int) -> IO Int
+*4. withForeignBuffer :: ByteString -> ((Buffer, BufSize) -> IO Int) -> IO Int
  left with dependence to Data.ByteString.Internal
 
 Network/Wai/Handler/Warp/PackInt.hs :
 -------------------------------------
 
-packIntegral :: Integral a => a -> ByteString
-packStatus :: H.Status -> ByteString
+1. packIntegral :: Integral a => a -> ByteString
+2. packStatus :: H.Status -> ByteString
 
 Network/Wai/Handler/Warp/ResponseHeader.hs :
 --------------------------------------------
 
-composeHeader :: H.HttpVersion -> H.Status -> H.ResponseHeaders -> IO ByteString
-copyStatus :: H.HttpVersion -> H.Status -> ByteString
-copyHeaders :: [H.Header] -> ByteString
-copyHeader :: H.Header -> ByteString
-copyCRLF :: ByteString -> ByteString
+1. composeHeader :: H.HttpVersion -> H.Status -> H.ResponseHeaders -> IO ByteString
+2. copyStatus :: H.HttpVersion -> H.Status -> ByteString
+3. copyHeaders :: [H.Header] -> ByteString
+4. copyHeader :: H.Header -> ByteString
+5. copyCRLF :: ByteString -> ByteString
 
 Network/Wai/Handler/Warp/RequestHeader.hs :
 -------------------------------------------
 
-parseHeaderLines :: [ByteString]
+1. parseHeaderLines :: [ByteString]
                  -> IO (H.Method
                        ,ByteString  --  Path
                        ,ByteString  --  Path, parsed
@@ -43,7 +43,7 @@ parseHeaderLines :: [ByteString]
                        ,H.HttpVersion
                        ,H.RequestHeaders
                        )
-parseRequestLine :: ByteString
+2. parseRequestLine :: ByteString
                   -> IO (H.Method
                         ,ByteString -- Path
                         ,ByteString -- Query
